@@ -91,30 +91,37 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
   
       -- methods are:
       
-          -- getCelebrities(): this method get all celebrities from the databse by calling  getAllCelebrities in API Service. It returns Observable
+          -- getStarWarsCelebrity(): 
+            -- get all star wars celebrity details by calling getStarWarsCelebrity method in APISerice
+            -- accepts Id as parameter
+            -- returns Observable
           
-          -- filterByFirstName(): filters celebrities list using firstname. It accepts firstname as parameter
-          
-          -- filterByLastName(): filters celebrities list using lastname. It accepts lastname as parameter
-          
-          -- filterByProfession(): filters celebrities list using profession. It accepts profession as parameter
    
-   - ApiService  (service folder)
+    - ApiService  (service folder)
    
-        -- getCelebrities(): this method get all celebrities from the databse by calling http get. It returns Observable
+        -- getStarWarsCelebrity(): 
+            -- tget all star wars celebrity details calling http get method. 
+            -- returns Observable
+            -- accept path as parameter
         
         
-  - celebrity (entity folder): is the celebrity class
+  - person (entity folder): entity or class for celebrity (person) details
   
-      -- methods are: setId(id:number), getId(), setFirstName(firstName:string), getFirstName(), setLastName(lastName:string), getLastName(), setProfession(profession:string),  getProfession(), setProfile(profile:any), getProfile()
+      -- methods are: setName(name:string), getName(), setHeight(height:string), getHeight(), setMass(mass:string), getMass(),      
+                      setHairColor(hairColor:string), getHairColor(), setSkinColor(skinColor:string), getSkinColor(), 
+                       setGender(gender:string), getGender(), setBirthYear(birthYear:string), getBirthYear(),       
+                       setHomePlanet(homePlanet:any), getHomePlanet(), setSpecies(species:any), getSpecies(),       
+                       setFilms(films:any), getFilms()
   
-  - component (celebrity): View and Controll of the angular application
+  
+  - component (starWarCelebrity): View and Controll of the angular application
     
-    - celebrity.component.ts file: controller of the angular web applications. fecthes data from database Celebrity Service class, process the data and sent needed data to the view for display
+    - starWarCelebrity.component.ts file: controller of the angular web applications. fecthes data from database through Person     
+        Service class, process the data and sent needed data to the view for display
     
-    - celebrity.component.html: the view
+    - starWarCelebrity.component.html: the view
     
-    - celebrity.component.css: css file
+    - starWarCelebrity.component.css: css file
   
   - Test Files
     
