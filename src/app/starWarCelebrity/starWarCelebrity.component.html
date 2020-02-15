@@ -1,0 +1,161 @@
+
+<div class="cotainer-fluid" >
+
+      <div class="row" >
+            <div class="col-2 sectionA" >
+      
+            </div>
+            <div class=" col-sm-12 col-md-12 col-lg-8 sectionB" >
+                  <div class="row" >
+                        <div class="col-12"  >
+
+                              <div class="row" style="background-color: #ffffff;">
+                                    <div class="col-12 mt-3 mb-3">
+                                          <label  style="font-size:16"> Enter the id of the celebrity you want to review:</label> 
+                                          <br>
+                                          <input id="firstname" type = "text"  name="firstname" (keyup)="columnFilter($event)" > 
+                                          <br>
+                                          <label *ngIf="showError" style="color:red;font-size: 12px;">Please enter value between 0-9</label> 
+                                    </div>
+                              </div>
+
+                              <div class="row" style="background-color: #ffffff;">
+                                    <div class="col-12 mt-3 mb-3">
+                                          <label> Star Wars Celebrity Details:</label>   
+                                    </div>
+                              </div>
+                              <div class="row mt-5" >
+                                    <div class="col-12">
+                                          <table *ngIf="person!==undefined" class="table table-borderless">
+                                                <tbody>
+                                                      <tr>
+                                                            <th >Name: </th>
+                                                            <td>{{person.name}}</td>
+                                                      </tr>
+                                                      <tr>
+                                                            <th >Height:</th>
+                                                            <td>{{person.height}}</td>
+                                                      </tr>
+                                                      <tr>
+                                                            <th >Mass:</th>
+                                                            <td>{{person.mass}}</td>
+                                                      </tr>
+                                                      <tr>
+                                                            <th>Hair Color: </th>
+                                                            <td>{{person.hairColor}}</td>
+                                                      </tr>
+                                                      <tr>
+                                             
+                                                            <th>Skin Color: </th>
+                                                            <td>{{person.skinColor}}</td>
+                                                      </tr>
+                                                      <tr>
+                                             
+                                                            <th>Birth Year: </th>
+                                                            <td>{{person.birthYear}}</td>
+                                                      </tr> 
+                                                      <tr>
+                                                            <th>Gender: </th>
+                                                            <td>{{person.gender}}</td>
+                                                      </tr> 
+                                                </tbody>
+                                          </table>
+                                    </div>
+                              </div>
+
+                              <div class="row" style="background-color: #ffffff;">
+                                    <div class="col-12 mt-3 mb-3">
+                                          <label> Home Planet:</label>   
+                                    </div>
+                              </div>
+                              <div class="row">
+                                    <div class="col-12">
+                                          <table *ngIf="person!=undefined && person.homePlanet!=undefined" class="table table-borderless">
+                                                <tbody>
+                                                      <tr>
+                                                            <th >Population: </th>
+                                                            <td>{{person.homePlanet.population}}</td>
+                                                      </tr>
+                                                      <tr>
+                                                            <th >Terrain:</th>
+                                                            <td>{{person.homePlanet.terrain}}</td>
+                                                      </tr>
+                                                      <tr>
+                                                            <th >Title:</th>
+                                                            <td>{{person.homePlanet.title}}</td>
+                                                      </tr>
+                                                </tbody>
+                                          </table>
+                                    </div>
+                              </div>   
+                              <div class="row" style="background-color: #ffffff;">
+                                    <div class="col-12 mt-3 mb-3">
+                                          <label> Films:</label>   
+                                    </div>
+                              </div>
+                              <div class="row">
+                                    <div class="col-12">
+                                          <table *ngFor="let film of films" class="table" >
+                                                <thead class="thead-dark">
+                                                      <tr>
+                                                            <th scope="col">Title: </th>
+                                                            <th scope="col">Director:</th>
+                                                            <th scope="col">Producers:</th>
+                                                            <th scope="col">Release Date:</th>
+                                                      </tr>
+                                                </thead>
+                                                <tbody>
+                                                      <tr>
+                                                            <td>{{film.title}}</td>
+                                                            <td>{{film.director}}</td>
+                                                            <td>{{film.producers}}</td>
+                                                            <td>{{film.releaseDate}}</td>
+                                                      </tr>
+                                                </tbody>
+                                          </table> 
+                                    </div>
+                              </div>
+                              <div class="row" style="background-color: #ffffff;">
+                                    <div class="col-12 mt-3 mb-3">
+                                          <label> Species:</label>   
+                                    </div>
+                              </div>
+                              <div class="row">
+                                    <div class="col-12">
+                                          <table *ngFor="let specie of species" class="table">
+                                                <thead class="thead-dark">
+                                                      <tr>
+                                                            <th scope="col">Name: </th>
+                                                            <th scope="col">Average:</th>
+                                                            <th scope="col">Classification:</th>
+                                                            <th scope="col">Language:</th>
+                                                      </tr>
+                                                </thead>
+                                                <tbody>
+                                                      <tr>
+                                                            <td>{{specie.name}}</td>
+                                                            <td>{{specie.average}}</td>
+                                                            <td>{{specie.classification}}</td>
+                                                            <td>{{specie.language}}</td>
+                                                      </tr>
+                                                </tbody>
+                                          </table> 
+                                    </div>
+                              </div>
+                        </div>    
+                  </div>
+            </div>
+            <div class="col-2 sectionC" >
+      
+            </div>
+            
+      </div>
+            
+</div>
+<ngx-spinner class="__loader" bdColor="rgba(0,0,0,0.9)" size="default" color="#fff" type="ball-scale-pulse"
+            [fullScreen]="true">
+            <p style="color: #ffffff"> Loading... </p>
+            </ngx-spinner>
+
+
+     
