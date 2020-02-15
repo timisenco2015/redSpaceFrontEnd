@@ -125,16 +125,22 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
   
   - Test Files
     
-    - celebrityTest
+    - personTest.spec.ts: test file for person.ts in entity folder
     
-    - entityTest
+    - apiServiceTest.spec.ts: test file for api.service.ts in service folder
     
-    - serviceTest
+    - personServiceTest.spec.ts: test file for person.service.ts in service folder
+    
+    - mockAPIService.ts: mock file for api.service. use for mocking APIService in PersonService
+    
+    - starWarCelebrityComponent.spec.ts: test file for starWarCelebrityComponent.ts in starWarCelebrity folder
+    
+    - mockStarWarCelebrityService: mock file for person.service. use for mocking PersonService when testing 
+      starWarCelebrityComponent
     
     Well written test files using Jasmine and Karma
     
-      
-      
+     
       
 ## Further help
 
